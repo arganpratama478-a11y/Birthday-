@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Love You</title>
+<style>
+body{margin:0;height:100vh;background:#000;display:flex;justify-content:center;align-items:center;overflow:hidden}
+h1{color:#fff;font-size:50px;text-shadow:0 0 10px #ff0055,0 0 30px #ff0055,0 0 60px #ff0055;animation:beat 1s infinite;z-index:2}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.heart{position:absolute;color:#ff0055;animation:up 5s linear infinite}
+@keyframes up{0%{transform:translateY(100vh)}100%{transform:translateY(-10vh);opacity:0}}
+.glow{position:absolute;width:500px;height:500px;background:#ff0055;filter:blur(150px);opacity:.3;border-radius:50%}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<h1>I LOVE YOU ❤️</h1>
+<script>
+setInterval(()=>{
+let h=document.createElement('div');h.className='heart';h.innerHTML='❤';
+h.style.left=Math.random()*100+'vw';h.style.fontSize=(15+Math.random()*20)+'px';
+h.style.animationDuration=(3+Math.random()*3)+'s';document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+},100);
+</script>
+</body>
+</html>
